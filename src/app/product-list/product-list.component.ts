@@ -23,6 +23,15 @@ export class ProductListComponent implements OnInit {
      this.onProductSelected.emit(product);
    }
 
+   isSelected(product:Product)
+   {
+      if(!product || !this.currentProduct)
+      {
+        return false;
+      }
+      return product.sku === this.currentProduct.sku;
+   }
+   
   ngOnInit() {
   }
 
